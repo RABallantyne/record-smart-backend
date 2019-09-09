@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 2019_09_09_181528) do
   create_table "songs", force: :cascade do |t|
     t.string "song_name"
     t.text "song_note"
-    t.string "song_part"
     t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
