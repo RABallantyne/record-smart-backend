@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_09_171005) do
+ActiveRecord::Schema.define(version: 2019_09_09_181528) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "artists", force: :cascade do |t|
+    t.string "artist_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "parts", force: :cascade do |t|
+    t.string "part_name"
+    t.text "part_note"
+    t.bigint "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["song_id"], name: "index_parts_on_song_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "project_name"
+    t.text "project_notes"
+    t.bigint "artist_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artist_id"], name: "index_projects_on_artist_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "song_name"
+    t.text "song_note"
+    t.string "song_part"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_songs_on_project_id"
+  end
 
   create_table "welcomes", force: :cascade do |t|
     t.string "welcome_message"
@@ -21,4 +55,7 @@ ActiveRecord::Schema.define(version: 2019_09_09_171005) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "parts", "songs"
+  add_foreign_key "projects", "artists"
+  add_foreign_key "songs", "projects"
 end

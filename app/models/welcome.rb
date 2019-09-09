@@ -1,3 +1,2 @@
-class Welcome < ApplicationRecord
-    
+class Welcome < ApplicationRecord   
 end

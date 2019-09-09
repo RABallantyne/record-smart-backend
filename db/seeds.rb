@@ -6,3 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Welcome.create(welcome_message: "welcome!")
+
+Artist.create(artist_name: "Bobby B")
