@@ -7,20 +7,19 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Welcome.create(welcome_message: "welcome!")
 
+Part.destroy_all
+Song.destroy_all
 Project.destroy_all
 Artist.destroy_all
-Song.destroy_all
-Part.destroy_all
 
 artist1 = Artist.create(artist_name: "Bobby B")
 
-project1 = Project.create(artist_id: artist1.id, project_name: "New Album", project_notes: "A great display of stuff")
+project1 = Project.create(artist_id: artist1.id, project_name: "Songs for Coding", project_notes: "A real mess, but it comes together in the end.")
 
-song1 = Song.create(project_id: project1.id, song_name: "song one", song_note: "what a song")
-song2 = Song.create(project_id: project1.id, song_name: "song two", song_note: "what a damn song")
+song1 = Song.create(project_id: project1.id, song_name: "Whisper", song_note: "An ode to being quiet.")
+song2 = Song.create(project_id: project1.id, song_name: "Yell at Everyone", song_note: "A ballad of screaming loudly.")
 
-part1 = Part.create(song_id: song1.id, part_name: "drums", part_note: "rippin it up")
-part2 = Part.create(song_id: song1.id, part_name: "bass", part_note: "slappin it up")
-
-part3 = Part.create(song_id: song2.id, part_name: "vox", part_note: "hollerin it up")
-part4 = Part.create(song_id: song2.id, part_name: "triangle", part_note: "dingin it up")
+part1 = Part.create(song_id: song1.id, part_name: "Drums", part_note: "8 mics, close placement.")
+part2 = Part.create(song_id: song1.id, part_name: "Bass", part_note: "DI and one mic.")
+part3 = Part.create(song_id: song1.id, part_name: "Guitar", part_note: "One mic, finger pickin")
+part4 = Part.create(song_id: song1.id, part_name: "triangle", part_note: "A nice high end")
