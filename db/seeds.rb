@@ -12,7 +12,7 @@ Song.destroy_all
 Project.destroy_all
 Artist.destroy_all
 
-artist1 = Artist.create(artist_name: "The Beatles")
+artist1 = Artist.create(artist_name: "The Shi##y Beatles")
 
-project1 = Project.create(artist_id: artist1.id, project_name: "The White Album", project_notes: "Let's take it back to basics. Especially since we just discovered acid...")
+project1 = Project.create(artist_id: artist1.id, project_name: "The Tan Album", project_notes: "An homage to our favorite band...")
 
