@@ -12,14 +12,7 @@ Song.destroy_all
 Project.destroy_all
 Artist.destroy_all
 
-artist1 = Artist.create(artist_name: "Bobby B")
+artist1 = Artist.create(artist_name: "The Beatles")
 
-project1 = Project.create(artist_id: artist1.id, project_name: "Songs for Coding", project_notes: "A real mess, but it comes together in the end.")
+project1 = Project.create(artist_id: artist1.id, project_name: "The White Album", project_notes: "Let's take it back to basics. Especially since we just discovered acid...")
 
-song1 = Song.create(project_id: project1.id, song_name: "Whisper", song_note: "An ode to being quiet.")
-song2 = Song.create(project_id: project1.id, song_name: "Yell at Everyone", song_note: "A ballad of screaming loudly.")
-
-part1 = Part.create(song_id: song1.id, part_name: "Drums", part_note: "8 mics, close placement.")
-part2 = Part.create(song_id: song1.id, part_name: "Bass", part_note: "DI and one mic.")
-part3 = Part.create(song_id: song1.id, part_name: "Guitar", part_note: "One mic, finger pickin")
-part4 = Part.create(song_id: song1.id, part_name: "triangle", part_note: "A nice high end")
